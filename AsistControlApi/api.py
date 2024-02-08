@@ -47,7 +47,7 @@ class ManageAttendance(APIView):
         time_now = datetime.now().time()
 
         # Asignar las horas de entrada, comida y salida
-        entry_time = time(9, 0)  # Hora de entrada a las 9:00 AM
+        entry_time = time_now  # Hora de entrada a las 9:00 AM
         lunch_time = time(10, 30)  # Hora de comida a las 10:30 AM
         exit_time = time(18, 0)  # Hora de salida a las 6:00 PM
 
