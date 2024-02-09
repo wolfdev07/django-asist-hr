@@ -17,6 +17,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copia todo el contenido de la carpeta del proyecto al contenedor
 COPY . /app/
 
+RUN python manage.py migrate
 # Exponer el puerto 8080 para que Gunicorn escuche
 EXPOSE 8080
 
