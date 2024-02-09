@@ -4,6 +4,9 @@ FROM python:3.9-slim
 # Establece la variable de entorno PYTHONUNBUFFERED a 1 para evitar problemas con la salida
 ENV PYTHONUNBUFFERED 1
 
+# Instala las dependencias del sistema necesarias para psycopg2
+RUN apt-get update && apt-get install -y libpq-dev
+
 # Establece el directorio de trabajo en /app
 WORKDIR /app
 
@@ -17,7 +20,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copia todo el contenido de la carpeta del proyecto al contenedor
 COPY . /app/
 
+# Ejecuta las migraciones de Django
 RUN python manage.py migrate
+
 # Exponer el puerto 8080 para que Gunicorn escuche
 EXPOSE 8080
 
