@@ -1,16 +1,21 @@
 {
   "hosting": {
+    "site": "admin-asist-hr",
     "public": "static",
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
     ],
-    "rewrites": [{
-      "source": "**",
-      "run": {
-        "serviceId": "asist-hr-docker"
+    "rewrites": [
+      {
+        "source": "**",
+        "run": {
+          "serviceId": "backend-hr",
+          "region": "europe-west1",
+          "pinTag": true
+        }
       }
-    }]
+    ]
   }
 }
