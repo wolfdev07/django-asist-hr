@@ -1,7 +1,6 @@
 {
   "hosting": {
-    "site": "admin-asist-hr",
-    "public": "static",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
